@@ -22,11 +22,11 @@ makeDancer.prototype.setPosition = function(top, left) {
   // where it belongs on the page. See http://api.jquery.com/css/
   //
   var styleSettings = {
-    top: top,
-    left: left
+    top: Math.max(0, Math.min(top, $('body').height() - 20)),
+    left: Math.max(0, Math.min(left, $('body').width()))
   };
-  this.$node.css(styleSettings);
-  // if(!this.linedUp) { this.$node.animate(styleSettings, 100); } //this is cool, let's play with this later
+  // this.$node.css(styleSettings);
+  if(!this.linedUp) { this.$node.animate(styleSettings, 100); }
 };
 
 makeDancer.prototype.lineUp = function(index) {
