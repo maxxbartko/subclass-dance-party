@@ -17,8 +17,6 @@ StarDancer.prototype.move = function() {
   if(this.counter === 0) {
     this.degree = Math.random() * 360;
     this.reverse = false;
-  //set variables how much horizontal sin of degree times pi times 180
-  //set variables how much vertical cos of degree times pi times 180
   }
 
   var horiz = Math.sin(this.degree * Math.PI/180) * 10;
@@ -40,7 +38,9 @@ StarDancer.prototype.move = function() {
   var tooLeft = this.left < 0;
   var tooRight = this.left > $('body').width();
   var offscreen = tooRight || tooLeft || tooLow || tooHigh;
-  if (countDone || offscreen) { this.reverse = !this.reverse; }
+  if (countDone || offscreen) {
+    this.reverse = !this.reverse;
+  }
 
   this.setPosition(this.top, this.left);
 }

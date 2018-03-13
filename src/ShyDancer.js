@@ -20,9 +20,15 @@ ShyDancer.prototype.hide = function() {
     var vertDiff = window.dancers[i].left - this.left;
     var horizDiff = window.dancers[i].top - this.top;
     var hypo = Math.sqrt(vertDiff**2 + horizDiff**2);
-    if (hypo < 100 && hypo !== 0) { hidden = true; }
+    if (hypo < 100 && hypo !== 0) {
+      hidden = true;
+    }
   };
-  if (hidden) { this.$node.hide() } else { this.$node.show(); }
+  if (hidden) {
+    this.$node.hide()
+  } else {
+    this.$node.show();
+  }
 }
 
 ShyDancer.prototype.step = function() {
