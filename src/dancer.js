@@ -17,7 +17,7 @@ makeDancer.prototype.setPosition = function(top, left) {
   // Ensure that top and left don't go beyond either bound
   var styleSettings = {
     top: Math.max(0, Math.min(top, $('body').height() - 20)),
-    left: Math.max(0, Math.min(left, $('body').width()))
+    left: Math.max(0, Math.min(left, $('body').width() - 20))
   };
   // this.$node.css(styleSettings); // Instantly set position
   if(!this.linedUp) {
