@@ -7,6 +7,9 @@ var ShyDancer = function(top, left, timeBetweenSteps){
     this.left += (0.5 - Math.random()) * 250;
     this.setPosition(this.top, this.left);
   }.bind(this));
+
+  this.hidden = false;
+  this.blushing = false;
   
   this.step(100);
 };
@@ -15,23 +18,23 @@ ShyDancer.prototype = Object.create(makeDancer.prototype);
 ShyDancer.prototype.constructor = ShyDancer;
 
 ShyDancer.prototype.hide = function() {
-  var hidden = false;
-  var blushing = false;
+  this.hidden = false;
+  this.blushing = false;
   for (var i = 0; i < window.dancers.length; i++) {
     var vertDiff = window.dancers[i].left - this.left;
     var horizDiff = window.dancers[i].top - this.top;
     var hypo = Math.sqrt(vertDiff**2 + horizDiff**2);
     if (hypo < 50 && hypo !== 0) {
-      hidden = true;
+      this.hidden = true;
       break;
     } else if (hypo < 100 && hypo !== 0) {
-      blushing = true;
+      this.blushing = true;
     }
   };
 
-  if (hidden) {
+  if (this.hidden) {
     this.$node.hide();
-  } else if (blushing) {
+  } else if (this.blushing) {
     this.$node.css('border', '8px solid pink');
     this.$node.show();
   } else {
