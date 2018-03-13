@@ -1,5 +1,5 @@
 var makeBlinkyDancer = function(top, left, timeBetweenSteps) {
-  makeDancer.call(this, top, left, timeBetweenSteps);
+  makeDancer.call(this, top, left, timeBetweenSteps, 'blinky');
   this.step = function() {
     // call the old version of step at the beginning of any call to this new version of step
     this.scheduleStep(this.timeBetweenSteps);

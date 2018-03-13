@@ -25,3 +25,17 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+
+.blinky{
+}
+
+.vertical{
+  border:10px solid yellow;
+}
+
+.star{
+  border:10px solid green;
+}
+.shy{
+  border:10px solid blue;
+}

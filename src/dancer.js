@@ -1,10 +1,10 @@
 // Creates and returns a new dancer object that can step
-var makeDancer = function(top, left, timeBetweenSteps) {
+var makeDancer = function(top, left, timeBetweenSteps, name) {
   this.top = top;
   this.left = left;
   this.timeBetweenSteps = timeBetweenSteps;
   // use jQuery to create an HTML <span> tag
-  this.$node = $('<span class="dancer"></span>');
+  this.$node = $('<span class = "dancer ' + name + '"></span>');
   this.setPosition(top, left);
   this.linedUp = false;
 };

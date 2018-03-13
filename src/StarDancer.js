@@ -1,5 +1,5 @@
 var StarDancer = function(top, left, timeBetweenSteps){
-  makeDancer.call(this, top, left, timeBetweenSteps);
+  makeDancer.call(this, top, left, timeBetweenSteps, 'star');
   this.counter = 0;
   this.reverse = false;
   this.degree = 0;

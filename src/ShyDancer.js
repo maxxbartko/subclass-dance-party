@@ -1,5 +1,5 @@
 var ShyDancer = function(top, left, timeBetweenSteps){
-  makeDancer.call(this, top, left, timeBetweenSteps);
+  makeDancer.call(this, top, left, timeBetweenSteps, 'shy');
   this.setPosition(this.top, this.left);
 
   this.$node.mouseover(function() {
