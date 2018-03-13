@@ -13,9 +13,9 @@ describe('VerticalDancer', function() {
   });
 
   it('should have a step function that changes the "top" variable', function() {
-    var position = wiggler.$node.css('top'); 
+    var position = wiggler.top;
     wiggler.step();
-    expect(wiggler.$node.css('top')).not.to.equal(position);
+    expect(wiggler.top).not.to.equal(position);
   });
 
   describe('dance', function() {

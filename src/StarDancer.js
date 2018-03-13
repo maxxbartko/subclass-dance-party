@@ -1,13 +1,10 @@
 var StarDancer = function(top, left, timeBetweenSteps){
   makeDancer.call(this, top, left, timeBetweenSteps);
-  this.top = top;
-  this.left = left;
   this.counter = 0;
   this.reverse = false;
   this.degree = 0;
-  this.oldStep = makeDancer.prototype.step;
   this.step = function() {
-    this.oldStep(timeBetweenSteps);
+    this.scheduleStep(timeBetweenSteps);
     this.move();
   };
   this.step(timeBetweenSteps);

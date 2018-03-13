@@ -21,7 +21,9 @@ describe('StarDancer', function() {
 
   it('should reverse direction after hitting the top', function() {
     var reversed = shootingStar.reverse;
-    shootingStar.$node.css('top') === 1;
+    shootingStar.counter = 1;
+    shootingStar.degree = 180;
+    shootingStar.top = 1;
     shootingStar.step();
     expect(shootingStar.reverse).not.to.equal(reversed);
   });
