@@ -35,10 +35,10 @@ ShyDancer.prototype.hide = function() {
   if (this.hidden) {
     this.$node.hide();
   } else if (this.blushing) {
-    this.$node.css('border', '8px solid pink');
+    this.$node.addClass('blushing');
     this.$node.show();
   } else {
-    this.$node.css('border', '10px solid blue');
+    this.$node.removeClass('blushing');
     this.$node.show();
   }
 }

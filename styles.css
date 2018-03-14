@@ -5,6 +5,8 @@ body{
   margin: 0px;
   background-color:#444;
   font-size: 18px;
+  background-image: url('Mondrian2.jpg');
+  background-size: cover;
 }
 body, a:link, a:visited, a:active{
   color: lightblue;
@@ -21,21 +23,71 @@ body, a:link, a:visited, a:active{
   background-color: #777;
 }
 .dancer{
-  border:10px solid red;
-  border-radius:10px;
+  /*border-radius:10px;*/
   position:absolute;
 }
 
+.white{
+  border-color: white;
+}
+
+.black{
+  border-color: black;
+}
+
+.red{ /*could use some oranging*/
+  border-color: #ff1700;
+}
+
+.blue{
+  border-color: #3069e1;
+}
+
+.orange{ /*could use some redding*/
+  border-color: #ff4500;
+}
+
+.yellow{
+  border-color: yellow;
+}
+
+
 .blinky{
+  border-width: 20px 40px;
+  border-radius: 15px;
+  border-style: solid;
 }
 
 .vertical{
-  border:10px solid yellow;
+  border-width: 20px;
+  border-radius: 20px;
+  border-style: solid;
 }
 
 .star{
-  border:10px solid green;
+  width: 0;
+  height: 0;
+  border-top-width: 0px;
+  border-left-width: 30px;
+  border-left-style: solid;
+  border-left-color: transparent;
+  border-right-width: 30px;
+  border-right-style: solid;
+  border-right-color: transparent;
+  border-bottom-width: 45px;
+  border-bottom-style: solid;
 }
+
 .shy{
-  border:10px solid blue;
+  border-width: 20px;
+  border-style: solid;
+}
+
+.blushing{
+  border-width: 15px;
+  border-color: pink;
+}
+
+.hidden{
+  visibility: hidden;
 }

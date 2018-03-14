@@ -7,6 +7,20 @@ var makeDancer = function(top, left, timeBetweenSteps, name) {
   this.$node = $('<span class = "dancer ' + name + '"></span>');
   this.setPosition(top, left);
   this.linedUp = false;
+  this.colorAssign = Math.floor(Math.random() * 6);
+  if(this.colorAssign === 0){
+    this.$node.addClass('white');
+  } else if (this.colorAssign === 1){
+    this.$node.addClass('black');
+  } else if (this.colorAssign === 2){
+    this.$node.addClass('red');
+  } else if (this.colorAssign === 3){
+    this.$node.addClass('blue');
+  } else if (this.colorAssign === 4){
+    this.$node.addClass('orange');
+  } else if (this.colorAssign === 5){
+    this.$node.addClass('yellow');
+  }
 };
 
 makeDancer.prototype.scheduleStep = function(timeBetweenSteps) {
@@ -16,8 +30,8 @@ makeDancer.prototype.scheduleStep = function(timeBetweenSteps) {
 makeDancer.prototype.setPosition = function(top, left) {
   // Ensure that top and left don't go beyond either bound
   var styleSettings = {
-    top: Math.max(0, Math.min(top, $('body').height() - 20)),
-    left: Math.max(0, Math.min(left, $('body').width() - 20))
+    top: Math.max(32, Math.min(top, $('body').height() - 45)),
+    left: Math.max(0, Math.min(left, $('body').width() - 60))
   };
   // this.$node.css(styleSettings); // Instantly set position
   if(!this.linedUp) {
