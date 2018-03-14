@@ -31,12 +31,13 @@ $(document).ready(function() {
 
     window.dancers.push(dancer);
   });
-
+  var button = $('<a href="#" class="lineUpButton" id="lineUp">line up!</a>');
+    button.hide();
+  $('body').append(button);
   $('.lineUpButton').on('click', function(event) {
     for (var i = 0; i < window.dancers.length; i++) {
       window.dancers[i].lineUp(i);
     }
-    console.log('hi');
   });
 
 });

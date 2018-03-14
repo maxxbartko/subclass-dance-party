@@ -17,10 +17,15 @@ describe('lineUp Button', function() {
     sinon.spy(verticalDancer.$node, 'animate');
     sinon.spy(starDancer.$node, 'animate');
     sinon.spy(shyDancer.$node, 'animate');
-    var button = $('<span class="lineUpButton">line up!</span>');
-    // button.hide();
+    var button = $('<a href="#" class="lineUpButton" id="lineUp">line up!</a>');
     $('body').append(button);
-    button.click();
+    button.hide();
+    $('.lineUpButton').on('click', function(event) {
+      for (var i = 0; i < window.dancers.length; i++) {
+        window.dancers[i].lineUp(i);
+      }
+    });
+    $('.lineUpButton').trigger('click');
     expect(blinkyDancer.$node.animate.called).to.be.true;
     expect(verticalDancer.$node.animate.called).to.be.true;
     expect(starDancer.$node.animate.called).to.be.true;
